@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+        }
+
+        input[type="number"] {
+            font-size: 1.5rem;
+            width: 4rem;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #result {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <input type="number" id="num1" min="0" step="1"> + <input type="number" id="num2" min="0" step="1"> = <span id="randomNum"></span>
+        </div>
+        <button onclick="checkAnswer()">Submit</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const randomNumElem = document.getElementById("randomNum");
+        const num1Elem = document.getElementById("num1");
+        const num2Elem = document.getElementById("num2");
+        const resultElem = document.getElementById("result");
+
+        function generateRandomNumber() {
+            return Math.floor(Math.random() * 101);
+        }
+
+        function checkAnswer() {
+            const num1 = parseInt(num1Elem.value);
+            const num2 = parseInt(num2Elem.value);
+
+            if (num1 + num2 === parseInt(randomNumElem.textContent)) {
+                resultElem.textContent = "Very good";
+            } else {
+                resultElem.textContent = "Wrong. Try again";
+            }
+        }
+
+        function init() {
+            randomNumElem.textContent = generateRandomNumber();
+        }
+
+        init();
+    </script>
+</body>
+</html>
