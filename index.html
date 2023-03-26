@@ -102,6 +102,9 @@
                 }, 1000);
             } else {
                 resultElem.textContent = "Wrong. Try again";
+                setTimeout(() => {
+                    resultElem.textContent = "";
+                }, 1000);
             }
         }
 
