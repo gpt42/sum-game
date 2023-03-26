@@ -98,7 +98,11 @@
             if (num1 + num2 === parseInt(randomNumElem.textContent)) {
                 resultElem.textContent = "Very good";
                 setTimeout(() => {
-                    location.reload();
+                    randomNumElem.textContent = generateRandomNumber();
+                    num1Elem.value = "";
+                    num2Elem.value = "";
+                    resultElem.textContent = "";
+                    num1Elem.focus();
                 }, 1000);
             } else {
                 resultElem.textContent = "Wrong. Try again";
@@ -107,6 +111,7 @@
                 }, 1000);
             }
         }
+
 
         function init() {
             randomNumElem.textContent = generateRandomNumber();
