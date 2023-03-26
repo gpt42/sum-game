@@ -77,6 +77,37 @@
             return Math.floor(Math.random() * 16) + 5;
         }
 
+        function displayMessage(message, duration) {
+            resultElem.textContent = message;
+            setTimeout(() => {
+                resultElem.textContent = "";
+            }, duration);
+        }
+
+        function resetGame() {
+            randomNumElem.textContent = generateRandomNumber();
+            num1Elem.value = "";
+            num2Elem.value = "";
+            num1Elem.focus();
+        }
+
+        function checkAnswer() {
+            const num1 = parseInt(num1Elem.value);
+            const num2 = parseInt(num2Elem.value);
+
+            if (num1 + num2 === parseInt(randomNumElem.textContent)) {
+                displayMessage("Very good", 1000);
+                setTimeout(resetGame, 1000);
+            } else {
+                displayMessage("Wrong. Try again", 1000);
+            }
+        }
+
+        function init() {
+            randomNumElem.textContent = generateRandomNumber();
+            num1Elem.focus();
+        }
+
         num1Elem.addEventListener("keydown", (event) => {
             if (event.key === "Enter") {
                 event.preventDefault();
@@ -91,35 +122,8 @@
             }
         });
 
-        function checkAnswer() {
-            const num1 = parseInt(num1Elem.value);
-            const num2 = parseInt(num2Elem.value);
-
-            if (num1 + num2 === parseInt(randomNumElem.textContent)) {
-                resultElem.textContent = "Very good";
-                setTimeout(() => {
-                    randomNumElem.textContent = generateRandomNumber();
-                    num1Elem.value = "";
-                    num2Elem.value = "";
-                    resultElem.textContent = "";
-                    num1Elem.focus();
-                }, 1000);
-            } else {
-                resultElem.textContent = "Wrong. Try again";
-                setTimeout(() => {
-                    resultElem.textContent = "";
-                }, 1000);
-            }
-        }
-
-
-        function init() {
-            randomNumElem.textContent = generateRandomNumber();
-            num1Elem.focus();
-        }
-
-
         init();
+
     </script>
 </body>
 </html>
