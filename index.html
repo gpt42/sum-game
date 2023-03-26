@@ -4,47 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sum Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 2rem;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 2rem;
+    }
 
-        input[type="number"] {
-            font-size: 1.5rem;
-            width: 4rem;
-            -webkit-appearance: textfield;
-            -moz-appearance: textfield;
-            appearance: textfield;
-        }
+    input[type="number"] {
+        font-size: 1.5rem;
+        width: 4rem;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
 
-        input[type="number"]::-webkit-outer-spin-button,
-        input[type="number"]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
 
-        button {
-            font-size: 1.5rem;
-            padding: 0.5rem 1rem;
-        }
+    button {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-        }
+    button:hover {
+        background-color: #45A049;
+    }
 
-        #result {
-            margin-top: 1rem;
-        }
-    </style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    #result {
+        margin-top: 1rem;
+    }
+</style>
+
 </head>
 <body>
     <div class="container">
