@@ -44,7 +44,7 @@
         const resultElem = document.getElementById("result");
 
         function generateRandomNumber() {
-            return Math.floor(Math.random() * 101);
+            return Math.floor(Math.random() * 20);
         }
 
         function checkAnswer() {
@@ -53,6 +53,9 @@
 
             if (num1 + num2 === parseInt(randomNumElem.textContent)) {
                 resultElem.textContent = "Very good";
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
             } else {
                 resultElem.textContent = "Wrong. Try again";
             }
